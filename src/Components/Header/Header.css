@@ -1,0 +1,48 @@
+.header{
+    width:100%;
+    height: auto;
+    margin: auto;
+    padding: 30px 0px;
+}
+ .headerSearch{
+    width:100%;
+    height:60px;
+    border: 1px solid #bce3c9;
+    padding: 10px 20px;
+   
+}
+.selectDrop{
+    width: 20%;
+    font-size: 15px;
+    font-size: 500;
+    position: relative;
+}
+.selectDrop:after{
+     content: "";
+     width:1px;
+     height: 30px;
+     background:rgba(0,0,0,0.2);
+     position: absolute;
+     top:0px;
+     right: 0px;
+}
+.search{
+    width:82%;
+    padding-left: 30px;
+    position: relative;
+}
+.search input{
+  width:100%;
+  height: 30px;
+  border:0px;
+  outline: none !important; 
+  font-size: 18px;
+}
+.searchIcon{
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    opacity: 0.5;
+    font-size: 30px !important;
+    
+}
