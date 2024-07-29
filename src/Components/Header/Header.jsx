@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Logo from "../../assets/logo.svg"
+import Logo from "../../assets/logo.svg";
+import iconCompare from "../../assets/icon-compare.svg"
 import './Header.css'
 import { BsSearch } from "react-icons/bs";
 import SelectDrop from '../selectDrop/SelectDrop';
@@ -64,12 +65,39 @@ const Header = () => {
           {/* headerSearch starts here */}
       
            <div className="col-sm-5 d-flex align-items-center">
-            <div className="countries">
-              <SelectDrop data={countryList} placeholder={'Your Location'} icon={ <MdLocationOn style={{opacity:0.7}} />} />
+            <div className='ml-auto d-flex align-items-center'>
+              <div className="countries">
+                <SelectDrop data={countryList} placeholder={'Your Location'} icon={<MdLocationOn style={{ opacity: 0.7 }} />} />
+              </div>
+              <ul className='list list-inline mb-0 headerTabs'  >
+                <li className='list-inline-item'>
+                  <span> <img src ={iconCompare} alt=""/>
+                      <span className='badge bg-success rounded-circle'>3</span>
+                      Compare
+                  </span>  
+                </li>
+                <li className='list-inline-item'>
+                  <span> <img src ={iconCompare} alt=""/>
+                      <span className='badge bg-success rounded-circle'>3</span>
+                      WishList
+                  </span>  
+                </li>
+                <li className='list-inline-item'>
+                  <span> <img src ={iconCompare} alt=""/>
+                      <span className='badge bg-success rounded-circle'>3</span>
+                    Cart
+                  </span>  
+                </li>
+                <li className='list-inline-item'>
+                  <span> <img src ={iconCompare} alt=""/>
+                      <span className='badge bg-success rounded-circle'>3</span>
+                      Account
+                  </span>  
+                </li>
+              </ul>
             </div>
-              
-           </div>
-      
+          </div>
+
         </div>
 
       </div>

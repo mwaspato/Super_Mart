@@ -71,3 +71,26 @@
     color: #279065;
 
 }
+.headerTabs{
+    padding-left: 40px;
+}
+.headerTabs li  {
+   position: relative;
+}
+.headerTabs li span {
+    font-size: 20px;
+    cursor: pointer;
+}
+.headerTabs li span img {
+   margin-right: 10px;
+}
+
+.headerTabs li span.badge{
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    font-weight: 400;
+    position: absolute;
+    top: -20px;
+    left:10px;
+}
