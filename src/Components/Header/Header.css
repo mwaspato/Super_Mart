@@ -4,36 +4,37 @@
     margin: auto;
     padding: 30px 0px;
 }
- .headerSearch{
+ .header .headerSearch{
     width:100%;
     height:60px;
     border: 1px solid #bce3c9;
     padding: 10px 20px;
    
 }
-.selectDrop{
-    width: 20%;
-    font-size: 15px;
+.selectDropWrapper{
+    width:30%;
+    font-size: 16px;
     font-size: 500;
     position: relative;
+    padding-right:20px ;
 }
-.selectDrop:after{
+.selectDropWrapper:after{
      content: "";
      width:1px;
      height: 30px;
      background:rgba(0,0,0,0.2);
      position: absolute;
-     top:0px;
+     top:5px;
      right: 0px;
 }
 .search{
-    width:82%;
+    width:70%;
     padding-left: 30px;
     position: relative;
 }
 .search input{
   width:100%;
-  height: 30px;
+  height: 50px;
   border:0px;
   outline: none !important; 
   font-size: 18px;
@@ -45,4 +46,28 @@
     opacity: 0.5;
     font-size: 30px !important;
     
+}
+.countries .selectDropWrapper{
+    width:200px !important;
+    height: 45px;
+    padding-left: 10px;
+    display: flex;
+    border: 1px solid #ececec;
+    align-items: center;
+    -webkit-box-shadow: 0 3px 6px rgb(0 0 0/20%);
+    box-shadow: 5px 5px 15px  rgb(0 0 0.05);
+    
+}
+
+.countries .selectDropWrapper .openSelect{
+    width: 100%;
+}
+
+.countries .selectDropWrapper .selectDrop{
+    left:0px !important;
+
+}
+.countries .selectDropWrapper .selectDrop .openSelect{
+    color: #279065;
+
 }

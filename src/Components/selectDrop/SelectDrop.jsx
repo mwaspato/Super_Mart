@@ -1,35 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./selectDrop.css"
-const SelectDrop = () => {
+import { RiArrowDownSLine } from "react-icons/ri";
+import { ClickAwayListener } from '@mui/base/ClickAwayListener';
+
+const SelectDrop = ({data,placeholder,icon}) => {
+
+    const [isOpenSelect, setIsOpenSelect] = useState(false);
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [selectedItem, setSelectedItem] = useState(placeholder);
+    const openSelect = () =>{
+        setIsOpenSelect(!isOpenSelect);
+    }
+    const closeSelect = (index, name) =>{
+
+        setSelectedIndex(index)
+        setIsOpenSelect(false);
+        setSelectedItem(name)
+    }
   return (
-      <div className='selectDropWrapper cursor position-relative'>
-          <span className='openSelect'>All Categories</span>
-          <div className='selectDrop'>
-              <div className='searchField'>
-                  <input type="text" />
+     
+      <ClickAwayListener onClickAway={()=>setIsOpenSelect(false)}>
+          <div className='selectDropWrapper cursor position-relative'>
+              {icon}
+              <span className='openSelect cursor' onClick={openSelect}>{selectedItem}<RiArrowDownSLine className='arrow' /></span>
+              {
+                  isOpenSelect === true &&
+                  <div className='selectDrop'>
+                      <div className='searchField'>
+                          <input type="text" placeholder='Search here...' />
+                      </div>
+                      <ul className='searchResults'>
+                      <li key={0} onClick={() => closeSelect(0, placeholder)} className={`${selectedIndex === 0 ? "active" : ""}`}>{placeholder}</li>
+                          {data.map((item, index) => {
+                              return (
+                                  <li key={index+1} onClick={() => closeSelect(index+1, item)} className={`${selectedIndex === index+1? "active" : ""}`}>{item}</li>
+                              )
+                          })}
 
-              </div>
-              <ul className='searchResults'>
-                  <li>Milks and Dairies</li>
-                  <li>Wines and Drinks</li>
-                  <li>Clothing and beauty</li>
-                  <li> Fresh Seafood</li>
-                  <li>Pet Foods & Toy</li>
-                  <li>Fast Food </li>
-                  <li>Baking material</li>
-                  <li>Vegetables</li>
-                  <li>Fresh Fruit</li>
-                  <li>Bread and Juice</li>
-                  <li>Milks and Dairies</li>
-                  <li>Wines and Drinks</li>
-                  <li>Clothing and beauty</li>
-                  <li> Fresh Seafood</li>
-
-              </ul>
+                      </ul>
+                  </div>
+              }
           </div>
 
-      </div>
-    
+      </ClickAwayListener>
+      
+          
   )
 }
 
